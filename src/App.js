@@ -1,24 +1,61 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
 
-function App() {
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
+
+import { 
+  Grommet,
+  ResponsiveContext,
+} from 'grommet';
+
+//components
+import Information from "./views/Information";
+import Buy from "./views/Buy";
+import Airdrop from "./views/Airdrop";
+import Socials from "./views/Socials";
+import Team from "./views/Team";
+import Home from "./views/Home";
+
+const theme = {
+  global: {
+    colors: {
+      text: '#ffffff',
+      paragraph: '#ffffff',
+      brand: '#ffccff',
+      yellow: '#ffff00'
+    },
+    font: {
+      family: 'Roboto',
+      size: '18px',
+      height: '20px',
+    },
+  },
+};
+
+
+const App = () => {
+  const [sideBarOpen, setSideBarOpen] = useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Grommet theme={theme}>
+      <ResponsiveContext.Consumer>
+        {size => (
+          <Router>
+            <Switch>
+              <Route path="/" exact ><Home sideBarOpen={sideBarOpen} setSideBarOpen={setSideBarOpen}/></Route>
+              <Route path="/info" exact ><Information sideBarOpen={sideBarOpen} setSideBarOpen={setSideBarOpen}/></Route>
+              <Route path="/buy" exact ><Buy sideBarOpen={sideBarOpen} setSideBarOpen={setSideBarOpen}/></Route>
+              <Route path="/airdrop" exact ><Airdrop sideBarOpen={sideBarOpen} setSideBarOpen={setSideBarOpen}/></Route>
+              <Route path="/socials" exact ><Socials sideBarOpen={sideBarOpen} setSideBarOpen={setSideBarOpen}/></Route>
+              <Route path="/team" exact ><Team sideBarOpen={sideBarOpen} setSideBarOpen={setSideBarOpen}/></Route>
+            </Switch>
+          </Router>
+        )}
+      </ResponsiveContext.Consumer>
+    </Grommet>
   );
 }
 
