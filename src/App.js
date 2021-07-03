@@ -18,6 +18,7 @@ import Airdrop from "./views/Airdrop";
 import Socials from "./views/Socials";
 import Team from "./views/Team";
 import Home from "./views/Home";
+import Game from './views/Game'
 
 const theme = {
   global: {
@@ -46,6 +47,7 @@ const App = () => {
           <Router>
             <Switch>
               <Route path="/" exact ><Home sideBarOpen={sideBarOpen} setSideBarOpen={setSideBarOpen}/></Route>
+              <Route path="/game" exact ><Game sideBarOpen={sideBarOpen} setSideBarOpen={setSideBarOpen}/></Route>
               <Route path="/info" exact ><Information sideBarOpen={sideBarOpen} setSideBarOpen={setSideBarOpen}/></Route>
               <Route path="/buy" exact ><Buy sideBarOpen={sideBarOpen} setSideBarOpen={setSideBarOpen}/></Route>
               <Route path="/airdrop" exact ><Airdrop sideBarOpen={sideBarOpen} setSideBarOpen={setSideBarOpen}/></Route>

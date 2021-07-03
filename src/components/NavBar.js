@@ -33,6 +33,7 @@ const NavBar = (props) => {
             
           </Box>
           <Box direction='row' gap='small'>
+            <NavButton to='/game' name="game" />
             <NavButton to='/info' name="Info" />
             <NavButton to='buy' name="Buy" />
             <NavButton to='airdrop' name="Airdrop" />
