@@ -18,7 +18,9 @@ import Airdrop from "./views/Airdrop";
 import Socials from "./views/Socials";
 import Team from "./views/Team";
 import Home from "./views/Home";
-import Game from './views/Game'
+import Game from './views/Game';
+import Bundles from "./views/Bundles";
+import DXSale from "./views/DXSale";
 
 const theme = {
   global: {
@@ -53,6 +55,8 @@ const App = () => {
               <Route path="/airdrop" exact ><Airdrop sideBarOpen={sideBarOpen} setSideBarOpen={setSideBarOpen}/></Route>
               <Route path="/socials" exact ><Socials sideBarOpen={sideBarOpen} setSideBarOpen={setSideBarOpen}/></Route>
               <Route path="/team" exact ><Team sideBarOpen={sideBarOpen} setSideBarOpen={setSideBarOpen}/></Route>
+              <Route path="/bundles" exact ><Bundles sideBarOpen={sideBarOpen} setSideBarOpen={setSideBarOpen}/></Route>
+              <Route path="/dxsale" exact ><DXSale sideBarOpen={sideBarOpen} setSideBarOpen={setSideBarOpen}/></Route>
             </Switch>
           </Router>
         )}

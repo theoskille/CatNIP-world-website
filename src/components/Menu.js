@@ -22,6 +22,8 @@ export const StyledMenu = styled(Nav)`
 const Menu = ({sideBarOpen}) => {
     return (
       <StyledMenu sideBarOpen={sideBarOpen} direction='column' justify='start'>
+        <NavButton to='/dxsale' name="DXSale" />
+        <NavButton to='/bundles' name="Bundles" />
         <NavButton to='/game' name="game" />
         <NavButton to='/info' name="Info" />
         <NavButton to='buy' name="Buy" />

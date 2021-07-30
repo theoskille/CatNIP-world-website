@@ -1,5 +1,4 @@
 import React from 'react'
-
 import { 
   Box,
   ResponsiveContext,
@@ -10,16 +9,9 @@ import {
 import BackgroundBox from '../components/Background';
 import Footer from '../components/Footer';
 import NavBar from "../components/NavBar";
-import battleLogo from '../assets/catnipbattlerlogo.png';
+import CatNIPLogo from '../assets/CatNIPlogoIcon.png';
 import Menu from '../components/Menu';
-
-import UnityGame from '../components/UnityGame';
-
-
-const Game = (props) => {
-
-
-
+const DXSale = (props) => {
   return (
     <ResponsiveContext.Consumer>
       {size => (
@@ -33,8 +25,7 @@ const Game = (props) => {
               overflow={{ horizontal: 'hidden' }}
               height='100vh'
             >
-
-              <UnityGame/>
+              <Heading margin='small' color='white'>COMING SOON!</Heading>
               <Footer/>
             </Box>
           </Stack>
@@ -44,4 +35,4 @@ const Game = (props) => {
   )
 }
 
-export default Game
+export default DXSale

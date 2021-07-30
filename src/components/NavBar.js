@@ -33,12 +33,14 @@ const NavBar = (props) => {
             
           </Box>
           <Box direction='row' gap='small'>
+            <NavButton to='/dxsale' name="DXSale" />
+            <NavButton to='/bundles' name="Bundles" />
             <NavButton to='/game' name="game" />
             <NavButton to='/info' name="Info" />
-            <NavButton to='buy' name="Buy" />
-            <NavButton to='airdrop' name="Airdrop" />
-            <NavButton to='socials' name="Socials" />
-            <NavButton to='team' name="Team" />
+            <NavButton to='/buy' name="Buy" />
+            <NavButton to='/airdrop' name="Airdrop" />
+            <NavButton to='/socials' name="Socials" />
+            <NavButton to='/team' name="Team" />
           </Box>
         </Nav>
         :
