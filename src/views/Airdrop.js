@@ -57,14 +57,16 @@ const Airdrop = (props) => {
     // Set default account 
     let accounts = await web3.givenProvider.request({ method: 'eth_requestAccounts' });
     setMetaMaskAddress(accounts[0]);
-    airDropContract.methods.airDropTokensTotal(accounts[0]).call().then((result) => {setTotal(result)});
-    airDropContract.methods.airDropTokensAllClaimed(accounts[0]).call().then((result) => {setAllClaimed(result)});
-    airDropContract.methods.airDropTokensLeftToClaim(accounts[0]).call().then((result) => {setLeftToClaim(result)});
-    airDropContract.methods.airDropTokensPartialClaimed(accounts[0]).call().then((result) => {setPartialClaimed(result)});
+    var catNIPContractAddress = '0xc4d92aD854D0731aE34D88E1577CD4c9A043cF31';
+    airDropContract.methods.TotalBalanceOfAirdropTokenForUserAddressTimeSystem(accounts[0], catNIPContractAddress).call().then((result) => {setTotal((result / Math.pow(10,9)))});
+    airDropContract.methods.isFullyClaimedAirDrop(accounts[0], catNIPContractAddress).call().then((result) => {setAllClaimed((result / Math.pow(10,9)))});
+    airDropContract.methods.LeftBalanceOfAirdropTokenForUserAddressTimeSystem(accounts[0], catNIPContractAddress).call().then((result) => {setLeftToClaim((result / Math.pow(10,9)))});
+    airDropContract.methods.AmountOfAirdropAvailableToClaim(accounts[0], catNIPContractAddress).call().then((result) => {setPartialClaimed((result / Math.pow(10,9)))});
   }
 
   const claimAirdrop = async () => {
-    await airDropContract.methods.airDropClaim()
+    var catNIPContractAddress = '0xc4d92aD854D0731aE34D88E1577CD4c9A043cF31';
+    await airDropContract.methods.AirDropClaimTimerSystem(catNIPContractAddress)
       .send({
         from: metaMaskAddress
       })
@@ -106,7 +108,7 @@ const Airdrop = (props) => {
               <br/>
               <Paragraph color='white'>Airdrop Left to Claim: {leftToClaim}</Paragraph>
               <br/>
-              <Paragraph color='white'>Airdrop available to Claim: </Paragraph>
+              <Paragraph color='white'>Airdrop available to Claim: {partialClaimed} </Paragraph>
               <br/>
             </Box>
           <Box direction='row-responsive' margin='large'>
