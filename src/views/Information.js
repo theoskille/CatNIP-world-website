@@ -9,6 +9,8 @@ import {
 } from 'grommet';
 import { Scrollbars } from 'react-custom-scrollbars';
 
+import WhitepaperPDF from '../assets/documents/CatNIPWhitepaper.pdf';
+
 import catalystCat from '../assets/catalyst.png';
 
 import BackgroundBox from '../components/Background';
@@ -51,7 +53,9 @@ const Information = (props) => {
                     color: "yellow"
                   }}
                   target="_blank"
-                  href="/whitepaper">here</a>
+                  href={WhitepaperPDF}
+                  rel="noreferrer"
+                  >here</a>
                 <br></br>
               </Paragraph>
               <Paragraph
