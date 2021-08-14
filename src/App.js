@@ -54,7 +54,7 @@ const App = () => {
               <Route path="/buy" exact ><Buy sideBarOpen={sideBarOpen} setSideBarOpen={setSideBarOpen}/></Route>
               <Route path="/airdrop" exact ><Airdrop sideBarOpen={sideBarOpen} setSideBarOpen={setSideBarOpen}/></Route>
               <Route path="/socials" exact ><Socials sideBarOpen={sideBarOpen} setSideBarOpen={setSideBarOpen}/></Route>
-              <Route path="/team" exact ><Team sideBarOpen={sideBarOpen} setSideBarOpen={setSideBarOpen}/></Route>
+              {/* <Route path="/team" exact ><Team sideBarOpen={sideBarOpen} setSideBarOpen={setSideBarOpen}/></Route> */}
               <Route path="/bundles" exact ><Bundles sideBarOpen={sideBarOpen} setSideBarOpen={setSideBarOpen}/></Route>
               <Route path="/dxsale" exact ><DXSale sideBarOpen={sideBarOpen} setSideBarOpen={setSideBarOpen}/></Route>
             </Switch>
