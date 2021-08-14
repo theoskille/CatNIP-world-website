@@ -40,7 +40,7 @@ const NavBar = (props) => {
             <NavButton to='/buy' name="Buy" />
             <NavButton to='/airdrop' name="Airdrop" />
             <NavButton to='/socials' name="Socials" />
-            <NavButton to='/team' name="Team" />
+            {/* <NavButton to='/team' name="Team" /> */}
           </Box>
         </Nav>
         :
