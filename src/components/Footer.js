@@ -21,9 +21,9 @@ const Footer = () => {
     >
       <Text color='white'>CatNIP © 2021</Text>
       <Box direction='row' gap='xsmall'>
-        <Twitter color='white'/>
-        <Image width={24} height='auto' src={discordLogo}/>
-        <Image width={24} height='auto' src={telegramLogo}/>
+        {/* <Twitter href='https://discord.gg/g3qpUQGq' target="_blank" rel="noreferrer"  color='white'/>
+        <Image width={24} height='auto' to='https://discord.gg/g3qpUQGq' src={discordLogo}/>
+        <Image width={24} height='auto' to='https://discord.gg/g3qpUQGq' src={telegramLogo}/> */}
       </Box>
     </Box>
   )
