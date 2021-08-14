@@ -26,8 +26,8 @@ const Home = (props) => {
               height='100vh'
             >
               <Image style={{margin: '24px', width: `${size !== 'small' ? 'auto' : '50%'}`, height: 'auto'}} src={CatNIPLogo}/>
-              <Heading margin='small' color='white'>WELCOME TO CATNIP!</Heading>
-              <Heading margin='none' color='white' level='3' textAlign='center'>CatNIP is a new Cryptocurrency with an NFT Battler game.</Heading>
+              <Heading margin='small' color='white' >WELCOME TO CATNIP!</Heading>
+              <Heading margin='none' color='white' level='3' textAlign='center'>CatNIP is a Cryptocurrency with an NFT Battler game.</Heading>
               <Footer/>
             </Box>
           </Stack>
