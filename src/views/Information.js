@@ -9,6 +9,8 @@ import {
 } from 'grommet';
 import { Scrollbars } from 'react-custom-scrollbars';
 
+import WhitepaperPDF from '../assets/documents/CatNIPWhitepaper.pdf';
+
 import catalystCat from '../assets/catalyst.png';
 
 import BackgroundBox from '../components/Background';
@@ -44,14 +46,16 @@ const Information = (props) => {
                   }}
           >
             <Box align='center' style={{padding: '30px'}}>
-              <Paragraph color='white'>CatNIP is a new Financial Ecosystem.
+              <Paragraph color='white'>CatNIP is a Financial Ecosystem for NFT Games!
                 <br></br>
                 Please see our whitepaper <a
                   style={{
                     color: "yellow"
                   }}
                   target="_blank"
-                  href="/whitepaper">here</a>
+                  href={WhitepaperPDF}
+                  rel="noreferrer"
+                  >here</a>
                 <br></br>
               </Paragraph>
               <Paragraph
@@ -70,6 +74,7 @@ const Information = (props) => {
               </Paragraph>
               <Paragraph
                 color='white'
+                weight='bold'
                 style={{
                   textAlign: "left"
                 }}
@@ -86,11 +91,9 @@ const Information = (props) => {
                   textAlign: "left"
                 }}
               >
-                CatNIP has a 100% fair launch. No presale. No private sale.
+                CatNIP has a small PreSale of 1 BNB with a small soft cap.
                 <br></br>
-                The NIP contract is safeguarded with a Time Lock and a Multisig.
-                <br></br>
-                The NIP contract is also updated by proxy.
+                The NIP contract is safeguarded with a Gnosis Safe Multisig.
               </Paragraph>
               <Paragraph
                 color='white'
@@ -106,6 +109,7 @@ const Information = (props) => {
               </Paragraph>
               <Paragraph
                 color='white'
+                
                 style={{
                   textAlign: "left"
                 }}
@@ -124,8 +128,6 @@ const Information = (props) => {
                 }}
               >
                 Exchange listings are top priority for CatNIP.
-                <br></br>
-                CatNIP Audits are available.
                 <br></br>
                 The NIP team has very much planned. Please join Discord or Telegram for updates.
               </Paragraph>
