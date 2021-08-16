@@ -2,16 +2,18 @@ import React from 'react'
 
 import { 
     Button,
-    Image
+    Image,
+    ResponsiveContext
   } from 'grommet';
 import styled from 'styled-components';
 
 
 const StyledButton = styled(Button)`
     font-size: 50px;
+    margin: 4px;
     text-align: center;
-    min-width: 300px;
-    min-height: 80px;
+    min-width: ${({ size }) => size !== 'small' ? '270px' : '200px'};
+    min-height: ${({ size }) => size !== 'small' ? '80px' : '80px'};
     font-size: 22px;
     text-transform: uppercase;
     letter-spacing: 1.3px;
@@ -40,10 +42,14 @@ const StyledButton = styled(Button)`
 
 const PrimaryButton = (props) => {
     return (
-        <StyledButton onClick={props.onClick} margin='medium' greyedOut={props.greyedOut}>
-          <Image src={props.image} height={64} width={64} margin={{right: 'medium'}}/>
-          {props.name}
-        </StyledButton>
+        <ResponsiveContext.Consumer>
+            {size => (
+                <StyledButton onClick={props.onClick} margin='medium' greyedOut={props.greyedOut} size={size}>
+                    <Image src={props.image} height={64} width={64} margin={{right: 'medium'}}/>
+                    {props.name}
+                </StyledButton>
+            )}
+        </ResponsiveContext.Consumer>
     );
 }
 

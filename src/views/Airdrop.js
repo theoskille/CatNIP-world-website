@@ -89,27 +89,30 @@ const Airdrop = (props) => {
           <Box
             direction='column'
             align='center'
-            overflow={{ horizontal: 'hidden' }}
+            overflow={{ vertical: 'hidden', horizontal: 'hidden' }}
             height='100vh'
           >
-            <Image alt="..." src={lepCat}/>
-            <Heading color='white'>CATNIP AIRDROP</Heading>
+            <Image alt="..." style={{width: `${size !== 'small' ? '12%' : '50%'}`, height: 'auto'}} src={lepCat}/>
+            <Heading color='white' style={{margin: '0px'}}>CATNIP AIRDROP</Heading>
             <Paragraph fill size='large' textAlign='center' color='white'>Do you have an airdrop? Click "Connect to CatNIP" to see!</Paragraph>
-            <Box align='center' style={{
+            <Box 
+              direction='column' 
+                align='center'
+                justify='center'
+                flex="grow"
+                style={{
                 padding: '15px', 
-                width: `${size !== 'small' ? '40%' : '95%'}`,
-                height: 600,
+                
                 borderRadius: "30px",
                 background: "rgba(0, 0, 0, 0.1)",}}
             >
               <Paragraph color='white'>Total Airdrop Amount: {total}</Paragraph>
-              <br/>
+              
               <Paragraph color='white'>Airdrop Left to Claim: {leftToClaim}</Paragraph>
-              <br/>
+              
               <Paragraph color='white'>Airdrop available to Claim: </Paragraph>
-              <br/>
             </Box>
-          <Box direction='row-responsive' margin='large'>
+          <Box direction={size != 'small' ? 'row' : 'column'} margin='large'>
             <PrimaryButton onClick={connectWallet} greyedOut={false} image={leaf} name={metaMaskAddress ? `${metaMaskAddress.substring(0,8)}...` : 'Connect to CatNIP'}/>
             <PrimaryButton onClick={claimAirdrop} greyedOut={metaMaskAddress ? false : true} image={leaf} name='Claim Airdrop'/>
           </Box>
