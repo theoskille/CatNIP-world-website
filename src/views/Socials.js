@@ -30,8 +30,8 @@ const Socials = (props) => {
               height='100vh'
             >
               <Heading color='white'>Join our community!</Heading>
-              <Box direction='row' gap='small'>
-                <SocialMediaCard to='https://discord.gg/g3qpUQGq' name='discord' image={discordLogo}/>
+              <Box direction={size != 'small' ? 'row' : 'column'} gap='small'>
+                <SocialMediaCard to='https://discord.gg/qzaYahraDF' name='discord' image={discordLogo}/>
                 <SocialMediaCard to='https://twitter.com/CatnipToken' name='twitter' image={twitterLogo}/>
                 <SocialMediaCard to='https://t.me/Catnipchat' name='telegram' image={telegramLogo}/>
               </Box>
