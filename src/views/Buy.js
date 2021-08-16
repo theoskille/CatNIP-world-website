@@ -28,7 +28,7 @@ const Buy = (props) => {
             overflow={{ horizontal: 'hidden' }}
             height='100vh'
           >
-            <Image style={{margin: '24px', width: `${size !== 'small' ? 'auto' : '50%'}`, height: 'auto'}} alt="..." src={pancakeCat}/>
+            <Image style={{margin: '24px', width: `${size !== 'small' ? '25%' : '50%'}`, height: 'auto'}} alt="..." src={pancakeCat}/>
             <Heading textAlign='center' color='white'>Coming soon to PancakeSwap!</Heading>
             <PrimaryButton image={pcsLogo} name='Buy'/>
           </Box>
