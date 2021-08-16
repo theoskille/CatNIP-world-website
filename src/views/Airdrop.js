@@ -115,11 +115,11 @@ const Airdrop = (props) => {
               <Paragraph color='white'>Airdrop available to Claim: {partialClaimed} </Paragraph>
               <br/>
             </Box>
-          <Box direction={size != 'small' ? 'row' : 'column'} margin='large'>
+          <Box direction={size != 'small' ? 'row' : 'column'} margin='xsmall'>
             <PrimaryButton onClick={connectWallet} greyedOut={false} image={leaf} name={metaMaskAddress ? `${metaMaskAddress.substring(0,8)}...` : 'Connect to CatNIP'}/>
             <PrimaryButton onClick={claimAirdrop} greyedOut={metaMaskAddress ? false : true} image={leaf} name='Claim Airdrop'/>
           </Box>
-          <Paragraph size='large' textAlign='center' color='white'>Check back next week for more Airdrop to Claim!</Paragraph>
+          
           </Box>
         </Stack>
         <Footer/>
