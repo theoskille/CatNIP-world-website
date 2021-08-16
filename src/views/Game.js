@@ -33,8 +33,7 @@ const Game = (props) => {
               overflow={{ horizontal: 'hidden' }}
               height='100vh'
             >
-
-              <UnityGame/>
+              {size !== 'small' ? <UnityGame/> : <Heading color='white' textAlign='center'>Game not available on mobile</Heading>}
               <Footer/>
             </Box>
           </Stack>
