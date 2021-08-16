@@ -9,6 +9,8 @@ import {
 } from 'grommet';
 import { Scrollbars } from 'react-custom-scrollbars';
 
+import WhitepaperPDF from '../assets/documents/CatNIPWhitepaper.pdf';
+
 import catalystCat from '../assets/catalyst.png';
 
 import BackgroundBox from '../components/Background';
@@ -57,7 +59,14 @@ CatNIP has a 2% Liquidity, 2% Holder, and 1% Team tax.<br/>
 Whale Blocker - Max transfer of 1,000,000 NIP per 24 hours.<br/>
 Bot Blocker - CatNIP uses a unique system to put an end to bot scalping.<br/>
 
-For more info, please see our whitepaper here(Download Link)
+For more info, please see our whitepaper <a
+                  style={{
+                    color: "yellow"
+                  }}
+                  target="_blank"
+                  href={WhitepaperPDF}
+                  rel="noreferrer"
+                  >here</a>(Download Link)
                 </Paragraph>
             </Box>
           </Scrollbars>
