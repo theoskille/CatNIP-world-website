@@ -57,14 +57,16 @@ const Airdrop = (props) => {
     // Set default account 
     let accounts = await web3.givenProvider.request({ method: 'eth_requestAccounts' });
     setMetaMaskAddress(accounts[0]);
-    airDropContract.methods.airDropTokensTotal(accounts[0]).call().then((result) => {setTotal(result)});
-    airDropContract.methods.airDropTokensAllClaimed(accounts[0]).call().then((result) => {setAllClaimed(result)});
-    airDropContract.methods.airDropTokensLeftToClaim(accounts[0]).call().then((result) => {setLeftToClaim(result)});
-    airDropContract.methods.airDropTokensPartialClaimed(accounts[0]).call().then((result) => {setPartialClaimed(result)});
+    var catNIPContractAddress = '0xc4d92aD854D0731aE34D88E1577CD4c9A043cF31';
+    airDropContract.methods.TotalBalanceOfAirdropTokenForUserAddressTimeSystem(accounts[0], catNIPContractAddress).call().then((result) => {setTotal((result / Math.pow(10,9)))});
+    airDropContract.methods.isFullyClaimedAirDrop(accounts[0], catNIPContractAddress).call().then((result) => {setAllClaimed((result / Math.pow(10,9)))});
+    airDropContract.methods.LeftBalanceOfAirdropTokenForUserAddressTimeSystem(accounts[0], catNIPContractAddress).call().then((result) => {setLeftToClaim((result / Math.pow(10,9)))});
+    airDropContract.methods.AmountOfAirdropAvailableToClaim(accounts[0], catNIPContractAddress).call().then((result) => {setPartialClaimed((result / Math.pow(10,9)))});
   }
 
   const claimAirdrop = async () => {
-    await airDropContract.methods.airDropClaim()
+    var catNIPContractAddress = '0xc4d92aD854D0731aE34D88E1577CD4c9A043cF31';
+    await airDropContract.methods.AirDropClaimTimerSystem(catNIPContractAddress)
       .send({
         from: metaMaskAddress
       })
@@ -106,11 +108,12 @@ const Airdrop = (props) => {
                 borderRadius: "30px",
                 background: "rgba(0, 0, 0, 0.1)",}}
             >
-              <Paragraph color='white'>Total Airdrop Amount: {total}</Paragraph>
-              
-              <Paragraph color='white'>Airdrop Left to Claim: {leftToClaim}</Paragraph>
-              
-              <Paragraph color='white'>Airdrop available to Claim: </Paragraph>
+              <Paragraph size='xlarge' color='white'>Total Airdrop Amount: {total}</Paragraph>
+              <br/>
+              <Paragraph size='xlarge' color='white'>Airdrop Left to Claim: {leftToClaim}</Paragraph>
+              <br/>
+              <Paragraph size='xlarge' color='white'>Airdrop available to Claim: {partialClaimed} </Paragraph>
+              <br/>
             </Box>
           <Box direction={size != 'small' ? 'row' : 'column'} margin='large'>
             <PrimaryButton onClick={connectWallet} greyedOut={false} image={leaf} name={metaMaskAddress ? `${metaMaskAddress.substring(0,8)}...` : 'Connect to CatNIP'}/>
