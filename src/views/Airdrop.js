@@ -112,7 +112,7 @@ const Airdrop = (props) => {
               <br/>
               <Paragraph size='xlarge' color='white'>Airdrop Left to Claim: {leftToClaim}</Paragraph>
               <br/>
-              <Paragraph size='xlarge' color='white'>Airdrop available to Claim: {partialClaimed} </Paragraph>
+              <Paragraph color='white'>Airdrop available to Claim: {partialClaimed} </Paragraph>
               <br/>
             </Box>
           <Box direction={size != 'small' ? 'row' : 'column'} margin='large'>
